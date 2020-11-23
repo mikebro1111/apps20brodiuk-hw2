@@ -33,7 +33,7 @@ public final class ImmutableLinkedList implements ImmutableList{
             current = current.next;
             currentCopy = currentCopy.next;
         }
-        copyList.length = length;
+        newList.length = length;
         return newList;
     }
 

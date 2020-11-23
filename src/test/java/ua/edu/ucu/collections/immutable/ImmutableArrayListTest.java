@@ -8,13 +8,13 @@ public class ImmutableArrayListTest {
     @Test
     public void testConstructor() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
     }
 
     @Test
     public void testAddObject() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         arrayList = (ImmutableArrayList) arrayList.add(0);
         String res = "12, 3.0, hello, 0";
 
@@ -24,7 +24,7 @@ public class ImmutableArrayListTest {
     @Test
     public void testInsertObject() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         arrayList = (ImmutableArrayList) arrayList.add(2, 0);
         String res = "12, 3.0, 0, hello";
 
@@ -34,14 +34,14 @@ public class ImmutableArrayListTest {
     @Test(expected = IndexOutOfBoundsException.class)
     public void testInsertObjectException() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         arrayList = (ImmutableArrayList) arrayList.add(7, 0);
     }
 
     @Test
     public void testAddAll() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         Object[] add = {0, "end"};
         arrayList = (ImmutableArrayList) arrayList.addAll(add);
         String res = "12, 3.0, hello, 0, end";
@@ -52,7 +52,7 @@ public class ImmutableArrayListTest {
     @Test
     public void testInsertAll() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         Object[] add = {0, "end"};
         arrayList = (ImmutableArrayList) arrayList.addAll(2, add);
         String res = "12, 3.0, 0, end, hello";
@@ -63,7 +63,7 @@ public class ImmutableArrayListTest {
     @Test(expected = IndexOutOfBoundsException.class)
     public void testInsertAllException() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         Object[] add = {0, "end"};
         arrayList = (ImmutableArrayList) arrayList.addAll(-2, add);
     }
@@ -71,7 +71,7 @@ public class ImmutableArrayListTest {
     @Test
     public void testRemove() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         arrayList = (ImmutableArrayList) arrayList.remove(1);
         String res = "12, hello";
 
@@ -81,14 +81,14 @@ public class ImmutableArrayListTest {
     @Test(expected = IndexOutOfBoundsException.class)
     public void testRemoveException() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         arrayList = (ImmutableArrayList) arrayList.remove(3);
     }
 
     @Test
     public void testGet() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         String res = "hello";
 
         assertEquals(res, arrayList.get(2));
@@ -97,7 +97,7 @@ public class ImmutableArrayListTest {
     @Test(expected = IndexOutOfBoundsException.class)
     public void testGetException() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         arrayList = (ImmutableArrayList) arrayList.get(100);
     }
 
@@ -121,28 +121,28 @@ public class ImmutableArrayListTest {
     @Test
     public void testIndexOf() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         assertEquals(2, arrayList.indexOf("hello"));
     }
 
     @Test
     public void testIndexOfNotFound() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         assertEquals(-1, arrayList.indexOf(7));
     }
 
     @Test
     public void testSize() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         assertEquals(3, arrayList.size());
     }
 
     @Test
     public void testClear() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         arrayList = (ImmutableArrayList) arrayList.clear();
         assertEquals("", arrayList.toString());
     }
@@ -150,21 +150,21 @@ public class ImmutableArrayListTest {
     @Test
     public void testIsEmpty() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         assertFalse(arrayList.isEmpty());
     }
 
     @Test
     public void testToArray() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
-        assertArrayEquals(arr, arrayList.toArray());
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
+        assertArrayEquals(array, arrayList.toArray());
     }
 
     @Test
     public void testToString() {
         Object[] array = {12, 3.0, "hello"};
-        ImmutableArrayList arrayList = new ImmutableArrayList(arr);
+        ImmutableArrayList arrayList = new ImmutableArrayList(array);
         String str = arrayList.toString();
         String res = "12, 3.0, hello";
         assertEquals(res, str);
